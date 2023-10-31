@@ -27,10 +27,40 @@ for (const image of images) {
         image.style.display = 'none';
     }
     
-}//--------- Loop through all the paragraphs
+}//--------- Loop through all the paragraphs and show content
 
-const allTheParagraphs = document.querySelectorAll('p');
-for (const paragraph of allTheParagraphs) {
-    console.log(paragraph);
+// const allTheParagraphs = document.querySelectorAll('p');
+// for (const paragraph of allTheParagraphs) {
+//     console.log(paragraph.textContent);   
+//  }
+
+//-------Loop all the <p> and show those with a classname
+
+// const allTheParagraphs = document.querySelectorAll('p');
+// for (const paragraph of allTheParagraphs) {
+//     if(paragraph.classList.length > 0) {
+//         console.log('ClassName:' + paragraph.classList[0])
+//     }
     
+// }
+
+// ---------Random colors to <p>
+
+const paragraphs = document.querySelectorAll('p');
+
+for (const paragraph of paragraphs) {
+  if (!paragraph.classList.length) {
+    // Generate a random color
+    const color = randomColor();
+
+    // Set the text color of the paragraph
+    paragraph.style.color = color;
+  }
+}
+
+function randomColor() {
+  // Generate a random hex code
+  const hexCode = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+  return hexCode;
 }
