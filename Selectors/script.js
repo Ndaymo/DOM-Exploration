@@ -19,10 +19,18 @@
 
 // }
 
+//----------Disappear amm images that dont contain a class of important
+
 const images = document.querySelectorAll('img');
 for (const image of images) {
     if(!image.classList.contains('important')){
         image.style.display = 'none';
     }
+    
+}//--------- Loop through all the paragraphs
+
+const allTheParagraphs = document.querySelectorAll('p');
+for (const paragraph of allTheParagraphs) {
+    console.log(paragraph);
     
 }
