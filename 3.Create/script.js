@@ -50,7 +50,9 @@
     
 // }
 
-const learners = ["Lucas", "Kilian", "Alec", "Mohamed", "Pieter", "Rebecca", "Alessandro", "Josué", "Thibault", "Eduarda", "Mohammed", "Funda", "Luis", "Alexandru", "Andrej", "Danté", "Jonasi", "Kelsey", "Rana", "Jana", "Sieglinde", "Gustave", "Sezin", "Thierry", "Sylvie", "Anaïs"];
+const learners = ["Lucas", "Kilian", "Alec", "Mohamed", "Pieter", "Rebecca", "Alessandro", "Josué", "Thibault", "Eduarda", 
+"Mohammed", "Funda", "Luis", "Alexandru", "Andrej", "Danté", "Jonasi", "Kelsey", "Rana", "Jana", "Sieglinde", "Gustave", 
+"Sezin", "Thierry", "Sylvie", "Anaïs"];
 
 const articleElement = document.querySelector('article');
 
@@ -86,4 +88,26 @@ function randomColor() {
   const hexCode = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
   return hexCode;
+}
+
+function getContrastColor(backgroundColor) {
+  // Convert the background color to RGB
+  const rgb = backgroundColor.match(/\d+/g).map(Number);
+
+  // Calculate the perceived lightness of the background color
+  const perceivedLightness = (rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114) / 255;
+
+  // Return the contrast color
+  return perceivedLightness > 0.5 ? 'black' : 'white';
+}
+
+// Select all the sections with random colors
+const sections = document.querySelectorAll('section[style*="background-color"]');
+
+// For each section, set the text color to the contrast color
+for (const section of sections) {
+  const backgroundColor = section.style.backgroundColor;
+  const contrastColor = getContrastColor(backgroundColor);
+
+  section.style.color = contrastColor;
 }
