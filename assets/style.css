@@ -18,11 +18,11 @@ header, footer{
   justify-content: center;
   align-items: center;
 }
-.bity{
+/* .bity{
   width: 100px;
   height: 100px;
   border: 2px solid red;
-}
+} */
 header{
   top: 0;
   height: 80px;

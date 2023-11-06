@@ -71,3 +71,28 @@ document.querySelector('body').addEventListener('keydown', (event) => {
     logEvent('Changed background color');
   }
 });
+// Add the following event listener to the body element to delete the log when the "l" key is pressed
+document.querySelector('body').addEventListener('keydown', (event) => {
+  if (event.key === 'l') {
+    // Get the ul element containing the log items
+    const logElement = document.querySelector('main section:nth-child(3) ul');
+
+    // Delete all of the log items
+    while (logElement.firstChild) {
+      logElement.removeChild(logElement.firstChild);
+    }
+  }
+});
+
+// Add the following event listener to the body element to delete the squares when the "s" key is pressed
+document.querySelector('body').addEventListener('keydown', (event) => {
+  if (event.key === 's') {
+    // Get the div element containing the squares
+    const squaresElement = document.querySelector('.displayedsquare-wrapper');
+
+    // Delete all of the squares
+    while (squaresElement.firstChild) {
+      squaresElement.removeChild(squaresElement.firstChild);
+    }
+  }
+});
