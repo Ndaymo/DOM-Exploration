@@ -118,7 +118,7 @@
 
 
 // kkkkkkkkkkkkkey up
-const ul = document.querySelector('ul');
+
 
 // Get the Fast and Furious li element.
 const fastAndFuriousLi = ul.querySelector('li.important');
@@ -153,15 +153,10 @@ document.addEventListener('keyup', function(event) {
 
 //---------Last one
 
-const ul = document.querySelector('ul');
-
 // Get the Fast and Furious li element.
-const fastAndFuriousLi = ul.querySelector('li.important');
 
 // Create a function to sort the list in a random order.
 function shuffleList() {
-  // Get all of the li elements in the list.
-  const liElements = ul.querySelectorAll('li');
 
   // Remove the Fast and Furious li element from the array.
   liElements.splice(0, 1);
